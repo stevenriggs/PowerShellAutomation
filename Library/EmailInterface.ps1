@@ -1,7 +1,3 @@
-#dot source the CommonLibrary.ps1
-#. "$PSScriptRoot\CommonLibrary.ps1"
-#CommonLibraryInit
-
 Function EmailInterfaceInit {
     $global:emailQueuePath = "C:\PowershellAutomation\Queue\SendAutomatedEmail"
     if(!(Test-Path -Path $emailQueuePath )){
@@ -69,7 +65,6 @@ Function WriteEmailObjectToQueueXMLFile {
 
 Function GetEmailQueueArray {
     #LOAD ALL XML FILES IN THE OPEN QUEUE INTO AN ARRAY
-    #TODO: Can we use the object builder in the InterfaceAlerts.ps1 instead??
     $emailQueueArray = @()
     Get-ChildItem "$emailQueuePath" -Filter *.xml | `
     Foreach-Object{
@@ -171,7 +166,7 @@ Function CreateEmail {
   # Usage:
   #   CreateEmail -Source <String name of runbook calling this function> -doNotDeliverBefore <date/time> -From <email address> -To <email address(s) (use commas)> -cc <email address(s) (use commas)> -bcc <email address(s) (use commas)> -Priority <string> -Subject <string> -Body <string>
   #
-  #  * Multiple recipients with a comma list(e.g. $recipients = "email1@uky.edu,email2@uky.edu")
+  #  * Multiple recipients with a comma list(e.g. $recipients = "email1@domain.com,email2@domain.com")
   #
   # Returns: Void
   ###########################################################################
