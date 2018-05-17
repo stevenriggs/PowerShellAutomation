@@ -1,7 +1,7 @@
 Param (
       [Parameter(Mandatory=$false)][string]$AutomationScriptName,
       [Parameter(Mandatory=$false)][string]$TimeoutInSeconds,
-      [Parameter(Mandatory=$false)][string]$LogFolderPath,   #"\\prditsordb01\Automation\Log"
+      [Parameter(Mandatory=$false)][string]$LogFolderPath,
       [Parameter(Mandatory=$false)][string]$Parameters,
       [Parameter(Mandatory=$false)][int]$DebugLevel
 )
