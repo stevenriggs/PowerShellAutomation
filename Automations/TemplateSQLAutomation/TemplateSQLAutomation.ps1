@@ -45,7 +45,7 @@ Function TemplateSQLAutomation {
 
     [string]$sqlQuery = "EXEC dbo.yourstoredprocedure"
 
-    #Get the list of ClientVisitGUID to process
+    #Run the SQL query
     $resultsDataTable = New-Object System.Data.DataTable
     try {
       $resultsDataTable = ExecuteSqlQuery $databaseServer $database $sqlQuery
