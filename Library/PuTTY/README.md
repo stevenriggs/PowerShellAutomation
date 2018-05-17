@@ -1,0 +1,3 @@
+Copy PuTTY executables here.
+
+https://www.chiark.greenend.org.uk/~sgtatham/putty/
